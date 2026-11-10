@@ -28,33 +28,33 @@
 </div>
 <div align="center">
   <h3>
-    <a href="https://github.com/x-nbnv/rustar/releases">
-      Releases
+    <a href="https://github.com/puppyptr/rustar/releases">
+      releases
     </a>
     <span> | </span>
     <a href="https://docs.rs/rustar">
-      Docs (WIP)
+      docs
     </a>
   </h3>
 </div>
 <div align="left">
 </br>
     
-## What is rustar?  
+## what is rustar?  
 **RUSTAR** (Rust + USTAR) is a minimal, safe (hopefully), and `#![no_std]`-friendly library for parsing [USTAR](https://en.wikipedia.org/wiki/Tar_(computing)#UStar_format) archives.  
 It is designed primarily for Rust-Based **OS** development, in the case one might bundle their kernel modules, init programs, or resources in a `.tar` and extract them at runtime (for an initramfs kinda thing)
 
 
 ---
 
-## Why use rustar for an OS?
+## why use rustar for an OS?
 Using RUSTAR as your filesystem format handler has some big advantages:
-- **Zero external deps**: Works in `#![no_std]`, requires only `alloc` if you need owned `Vec<u8>`.  
-- **Cross-tested**: Same code works on bare metal (e.g your OS kernel) and on Linux/Win with `cargo test`.
+- **zero external deps**: Works in `#![no_std]`, requires only `alloc` if you need owned `Vec<u8>`.  
+- **cross-tested**: Same code works on bare metal (e.g your OS kernel) and on Linux/Win with `cargo test`.
 
 ---
 
-## Features
+## features
 - purely rust based
 - `#![no_std]` compatible  
 - iterator function (`TarIter`) to walk over headers  
@@ -64,7 +64,7 @@ Using RUSTAR as your filesystem format handler has some big advantages:
 
 ---
 
-## Example in  OS kernel
+## example in an OS kernel
 This is an example implementation for it in an OS kernel, so same rules apply to a basic ```no_std``` environment:
 ```rust
 for header in rustar::TarIter::new(archive) {
@@ -78,7 +78,7 @@ if let Some(init_bin) = rustar::extract_file(archive, "init.bin") {
 
 ---
 
-## Example (testing on Linux)
+## example (testing on Linux)
 You can include a tar file directly in your unit tests (this is the included unit test):
 
 ```rust
@@ -107,16 +107,16 @@ cargo test
 
 ---
 
-## Roadmap
-- Add write support (create tar archives in `no_std`) , although i may already switch over my OS to fat12 or something by then
-- Expose a safe `TarHeader::contents(&self, archive: &[u8])` helper  
-- Support reading from block devices instead of memory slices (this would make life much easier but im lazy)
+## roadmap
+- add write support (create tar archives in `no_std`) , although i may already switch over my OS to fat12 or something by then
+- expose a safe `TarHeader::contents(&self, archive: &[u8])` helper  
+- support reading from block devices instead of memory slices (this would make life much easier but im lazy)
 
 ---
 
-## License
+## license
 
-this project uses the MIT License, in full effect. give me credit via name/username :3 (if you want)
+this project uses the MIT License, in full effect. credit via name/username would be prefered :3 
 
 ---
 
@@ -125,18 +125,18 @@ this project uses the MIT License, in full effect. give me credit via name/usern
 <tr>
 <td align="right">
 
-Brought to you by elizabeth  
+brought to you by elizabeth  
 
 </td>
 <td>
 
-<a href="https://github.com/x-nbnv">
+<a href="https://github.com/puppyptr">
   <img src="https://avatars.githubusercontent.com/u/65957437?v=4"
        width="140"
        height="140"
        style="border-radius:50%;"/>
 </a>  
-<p align="center"><sub><a href="https://github.com/pupgirlrule">pupgirlrule</a></sub></p>
+<p align="center"><sub><a href="https://github.com/puppyptr">puppyptr</a></sub></p>
 
 </td>
 </tr>
